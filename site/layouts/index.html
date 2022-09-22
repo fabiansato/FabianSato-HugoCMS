@@ -1,11 +1,13 @@
 {{ define "main" }}
 
-{{ partial "section-author.html" . }}
+{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
 
-{{ partial "section-projects.html" . }}
+{{ partial "short-text" .Params.blurb}}
 
-{{ partial "section-testimonials.html" . }}
+{{ partial "2-up" .Params }}
 
-{{ partial "section-blog.html" . }}
+{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
+
+{{ partial "blog" . }}
 
 {{ end }}
